@@ -62,6 +62,17 @@ Platform (the developer)
 - **Users** are everyone else who logs in (accountants, managers, auditors and so on).
 - Initial login entry: two entry points, **Developer** and **Client**. After a successful Client sign-in, the user-level access stage follows (see open questions).
 
+## 4a. Login screens (decided)
+
+- **The public login page shows only the Client login.** It has no link, button or mention of the Developer login.
+- **Developer (Platform) login lives on a separate address** (for example `admin.yourapp.com`) that nothing links to.
+- **2FA is required** for every Platform login.
+- The admin page has **no sign-up and no password-reset link**, rate-limits wrong attempts, and gives the **same "invalid credentials" message** for every failure.
+- **Server-side enforcement:** every admin API route rejects anyone who is not a Platform admin, whatever page they came from. Hiding the page is only the first layer.
+- **IP allowlist:** not now (could lock the developer out if their address changes). Can be added later.
+- **Login page design:** the owner supplied a `LoginPage.tsx` mockup (brand name RUDRABIZ, dark and gold split screen). Not added to the project yet. Needed changes: client code field for Client login, `lucide-react`, routing, and a real Better Auth sign-in instead of the placeholder.
+- **Still open:** how many Platform admins (just the developer, or a team), and how password reset works (needs email sending).
+
 ## 5. User levels (where a user can work)
 
 | Level | Access |

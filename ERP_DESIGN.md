@@ -71,7 +71,11 @@ Platform (the developer)
 - **Server-side enforcement:** every admin API route rejects anyone who is not a Platform admin, whatever page they came from. Hiding the page is only the first layer.
 - **IP allowlist:** not now (could lock the developer out if their address changes). Can be added later.
 - **Login page design:** the owner supplied a `LoginPage.tsx` mockup (brand name RUDRABIZ, dark and gold split screen). Not added to the project yet. Needed changes: client code field for Client login, `lucide-react`, routing, and a real Better Auth sign-in instead of the placeholder.
-- **Still open:** how many Platform admins (just the developer, or a team), and how password reset works (needs email sending).
+- **Platform admins: just the developer for now.** The account is created by a one-time setup command. No admin-management screen yet (a team can be added later).
+- **Admin 2FA: authenticator app (TOTP).** Free, no SMS or email needed.
+- **Admin password reset:** done by a command run on the server, so the admin page needs no email sending.
+- **Everything free while developing:** open-source stack, local PostgreSQL, emails printed to the server log (or a local mailbox tool) instead of really sent. Real email sending and hosting use free tiers until launch.
+- **Still open:** how Client and User password reset works (needs email sending, later).
 
 ## 5. User levels (where a user can work)
 

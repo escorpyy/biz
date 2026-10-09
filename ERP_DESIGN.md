@@ -74,6 +74,8 @@ Platform (the developer)
 - **Platform admins: just the developer for now.** The account is created by a one-time setup command. No admin-management screen yet (a team can be added later).
 - **Admin 2FA: authenticator app (TOTP).** Free, no SMS or email needed.
 - **Admin password reset:** done by a command run on the server, so the admin page needs no email sending.
+- **Admin account creation:** a one-time setup command (for example `npm run create-admin`) asks for email and password and creates the account. It refuses to run if an admin already exists. No sign-up page, no credentials in `.env`.
+- **Admin login is fully separate from Client/User login:** its own tables, its own small Better Auth setup, and its own session cookie that only works on the admin address. A customer session can never count as an admin session.
 - **Everything free while developing:** open-source stack, local PostgreSQL, emails printed to the server log (or a local mailbox tool) instead of really sent. Real email sending and hosting use free tiers until launch.
 - **Still open:** how Client and User password reset works (needs email sending, later).
 

@@ -1,7 +1,7 @@
 # ERP Accounting Software: Design Notes
 
 Last updated: 2026-10-09
-Status: **Design phase. No code written yet.**
+Status: **Skeleton done. First table (`clients`) built and tested.**
 
 ---
 
@@ -127,7 +127,9 @@ Example (Head Office sends Rs. 10,000 cash to Pokhara):
 
 **On discussion.** Candidate: Nepal (VAT 13%, NPR, Bikram Sambat dates, fiscal year Shrawan to Ashad, VAT/TDS support). Must be decided before the schema is finalized because it affects the database design.
 
-## 12a. Clients table (in discussion)
+## 12a. Clients table (BUILT and tested)
+
+Migrations: `backend/drizzle/0000_create_clients.sql` (table, enum, constraints) and `0001_clients_protect_triggers.sql` (code can never change; clients can never be deleted or truncated). Tested on PostgreSQL 16 with 28 cases (8 accepted, 20 refused by the right rule).
 
 - **Login identity:** a Client or User signs in with **client code + email + password**. The code says which client they belong to, so one person can work for two clients.
 - **Fields for the first version:** name, status (active / suspended / closed), client code (unique), phone, email, notes, created date.
@@ -155,6 +157,6 @@ Example (Head Office sends Rs. 10,000 cash to Pokhara):
 
 ## 14. Next steps
 
-1. Create the **project skeleton only** (backend, frontend, database connection, `/health` route). No tables and no accounting logic.
-2. First table, **`clients`**, reviewed line by line together.
+1. ~~Project skeleton~~ done.
+2. ~~First table, `clients`~~ done.
 3. Continue down the structure: users, companies, branches, fiscal years, chart of accounts, journal vouchers.

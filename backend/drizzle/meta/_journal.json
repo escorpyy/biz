@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791514205678,
+      "tag": "0000_create_clients",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791514209098,
+      "tag": "0001_clients_protect_triggers",
+      "breakpoints": true
+    }
+  ]
+}

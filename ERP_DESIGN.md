@@ -9,6 +9,7 @@ Status: **Skeleton done. First table (`clients`) built and tested.**
 
 - **No code until both of us confirm.** Discuss first, code second.
 - Build in **small pieces**, one at a time, carefully.
+- **Each piece is a full vertical slice:** its screen, its UI, its functions, its API, and its database part, all for that one piece, before moving to the next.
 - Every piece of code is reviewed **line by line** with the owner before it is added.
 - Ask questions **one at a time**. If the owner already has schema ideas or logic, ask for them first.
 - Keep this file updated after each decision so progress is never lost.
